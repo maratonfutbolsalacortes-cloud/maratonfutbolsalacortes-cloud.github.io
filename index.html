@@ -8,7 +8,7 @@
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --azul: #0d2a4e; --azul-medio: #1a4a7a; --dorado: #e8a020; --blanco: #f5f3ee; }
-
+ 
   html, body {
     width: 100%;
     min-height: 100vh;
@@ -17,7 +17,7 @@
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
   }
-
+ 
   /* HERO */
   .hero {
     position: relative;
@@ -40,7 +40,7 @@
     z-index: 0;
   }
   .hero > * { position: relative; z-index: 1; }
-
+ 
   .badge {
     display: inline-block;
     background: var(--dorado);
@@ -54,7 +54,7 @@
     border-radius: 2px;
     margin-bottom: 1.4rem;
   }
-
+ 
   .hero h1 {
     font-family: 'Oswald', sans-serif;
     font-size: clamp(3rem, 10vw, 6rem);
@@ -65,7 +65,7 @@
     text-shadow: 0 4px 40px rgba(0,0,0,0.6);
   }
   .hero h1 span { color: var(--dorado); display: block; }
-
+ 
   .hero-sub {
     margin-top: 1rem;
     font-size: 1rem;
@@ -74,7 +74,7 @@
     color: rgba(255,255,255,0.75);
     text-transform: uppercase;
   }
-
+ 
   .fecha-row {
     display: flex;
     align-items: center;
@@ -89,7 +89,7 @@
     color: var(--dorado);
     text-transform: uppercase;
   }
-
+ 
   .btns {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@
     justify-content: center;
     margin-top: 2.5rem;
   }
-
+ 
   .btn {
     display: inline-flex;
     align-items: center;
@@ -121,12 +121,12 @@
   .btn-white:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
   .btn-outline { background: transparent; color: var(--dorado); border-color: var(--dorado); }
   .btn-outline:hover { background: rgba(232,160,32,0.1); transform: translateY(-2px); }
-
+ 
   /* SECCIONES */
   .bloque { padding: 4rem 2rem; width: 100%; }
   .bloque-inner { max-width: 860px; margin: 0 auto; }
   .bloque-alt { background: rgba(255,255,255,0.03); }
-
+ 
   .etiqueta {
     font-family: 'Oswald', sans-serif;
     font-size: 0.72rem;
@@ -145,7 +145,7 @@
     margin-bottom: 2rem;
     line-height: 1.1;
   }
-
+ 
   /* PREMIOS */
   .premios { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; }
   .premio {
@@ -163,13 +163,13 @@
   .premio-importe { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; }
   .premio.oro .premio-importe { color: var(--dorado); }
   .premio-nota { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
-
+ 
   /* DATOS */
   .datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.8rem; margin-top: 1.5rem; }
   .dato-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dorado); margin-bottom: 0.3rem; }
   .dato-val { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 600; color: #fff; word-break: break-word; }
   .dato-sub { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
-
+ 
   /* TARJETAS ACCIÓN */
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
   .card {
@@ -194,7 +194,7 @@
   .card-cta { font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dorado); display: flex; align-items: center; gap: 0.35rem; }
   .card-cta svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.2; transition: transform 0.2s; }
   .card:hover .card-cta svg { transform: translateX(4px); }
-
+ 
   /* ALTERNATIVA */
   #alternativa {
     display: none; margin-top: 1.5rem;
@@ -205,10 +205,10 @@
   #alternativa h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dorado); margin-bottom: 0.9rem; }
   #alternativa ol { color: rgba(255,255,255,0.68); font-size: 0.88rem; line-height: 2.1; padding-left: 1.2rem; }
   #alternativa a { color: var(--dorado); }
-
+ 
   /* DIVISOR */
   .div { height: 1px; background: rgba(255,255,255,0.07); width: 100%; max-width: 860px; margin: 0 auto; }
-
+ 
   /* CONTACTO */
   .contacto { background: rgba(0,0,0,0.2); padding: 2.5rem 2rem; text-align: center; }
   .contacto-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
@@ -216,12 +216,12 @@
   .contacto-item { display: flex; align-items: center; gap: 0.45rem; color: rgba(255,255,255,0.65); font-size: 0.9rem; text-decoration: none; transition: color 0.15s; }
   .contacto-item:hover { color: var(--dorado); }
   .contacto-item svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
-
+ 
   footer { text-align: center; padding: 1.2rem; font-size: 0.72rem; color: rgba(255,255,255,0.18); letter-spacing: 0.08em; }
 </style>
 </head>
 <body>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -242,13 +242,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
       Modificar plantilla
     </a>
-    <a class="btn btn-outline" href="https://drive.google.com/drive/folders/1uN6Z30QBo8AEgN0DiSHdHTISk6rQq0oe" target="_blank">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-      Drive del torneo
-    </a>
+ 
   </div>
 </section>
-
+ 
 <!-- PREMIOS -->
 <section class="bloque">
   <div class="bloque-inner">
@@ -262,9 +259,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="div"></div>
-
+ 
 <!-- INSCRIPCIÓN -->
 <section class="bloque bloque-alt">
   <div class="bloque-inner">
@@ -278,9 +275,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="div"></div>
-
+ 
 <!-- ACCIONES -->
 <section class="bloque">
   <div class="bloque-inner">
@@ -323,7 +320,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACTO -->
 <div class="contacto">
   <p class="contacto-label">Contacto e información</p>
@@ -334,8 +331,8 @@
     <a class="contacto-item" href="mailto:maratonfutbolsalacortes@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>maratonfutbolsalacortes@gmail.com</a>
   </div>
 </div>
-
+ 
 <footer>© 2026 Asociación Deportiva Cortes · 48 Horas Fútbol Sala</footer>
-
+ 
 </body>
 </html>
