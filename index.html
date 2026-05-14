@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>48 Horas Fútbol Sala Cortes 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --azul: #0d2a4e; --azul-medio: #1a4a7a; --dorado: #e8a020; --blanco: #f5f3ee; }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--azul);
+    color: var(--blanco);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem 5rem;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(13,42,78,0.5) 0%, rgba(13,42,78,0.82) 55%, #0d2a4e 100%),
+      url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Castillo_de_Cortes%2C_Navarra.jpg/1280px-Castillo_de_Cortes%2C_Navarra.jpg') center 30%/cover no-repeat;
+    z-index: 0;
+  }
+  .hero > * { position: relative; z-index: 1; }
+
+  .badge {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--azul);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.3rem 1.1rem;
+    border-radius: 2px;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+  }
+  .hero h1 span { color: var(--dorado); display: block; }
+
+  .hero-sub {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+  }
+
+  .fecha-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+  .fecha-row .linea { flex: 1; height: 1px; background: rgba(255,255,255,0.2); max-width: 60px; }
+  .fecha-row span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--dorado);
+    text-transform: uppercase;
+  }
+
+  .btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .btn-gold { background: var(--dorado); color: var(--azul); border-color: var(--dorado); }
+  .btn-gold:hover { background: #f5b730; transform: translateY(-2px); }
+  .btn-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
+  .btn-white:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--dorado); border-color: var(--dorado); }
+  .btn-outline:hover { background: rgba(232,160,32,0.1); transform: translateY(-2px); }
+
+  /* SECCIONES */
+  .bloque { padding: 4rem 2rem; width: 100%; }
+  .bloque-inner { max-width: 860px; margin: 0 auto; }
+  .bloque-alt { background: rgba(255,255,255,0.03); }
+
+  .etiqueta {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 0.4rem;
+  }
+  .titulo-seccion {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+  }
+
+  /* PREMIOS */
+  .premios { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; }
+  .premio {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .premio:hover { border-color: var(--dorado); transform: translateY(-3px); }
+  .premio.oro { border-color: var(--dorado); background: rgba(232,160,32,0.08); }
+  .premio-pos { font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.4rem; }
+  .premio.oro .premio-pos { color: var(--dorado); }
+  .premio-importe { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; }
+  .premio.oro .premio-importe { color: var(--dorado); }
+  .premio-nota { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
+
+  /* DATOS */
+  .datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.8rem; margin-top: 1.5rem; }
+  .dato-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dorado); margin-bottom: 0.3rem; }
+  .dato-val { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 600; color: #fff; word-break: break-word; }
+  .dato-sub { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; }
+
+  /* TARJETAS ACCIÓN */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 1.75rem 1.4rem;
+    display: flex; flex-direction: column; gap: 0.85rem;
+    text-decoration: none; color: inherit; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .card:hover { border-color: var(--dorado); transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
+  .card.dest { border-color: var(--dorado); background: rgba(232,160,32,0.07); }
+  .card-ico {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(232,160,32,0.14); border: 1px solid rgba(232,160,32,0.3);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-ico svg { width: 22px; height: 22px; stroke: var(--dorado); fill: none; stroke-width: 1.8; }
+  .card-titulo { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #fff; }
+  .card-desc { font-size: 0.88rem; color: rgba(255,255,255,0.52); line-height: 1.55; flex: 1; }
+  .card-cta { font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dorado); display: flex; align-items: center; gap: 0.35rem; }
+  .card-cta svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.2; transition: transform 0.2s; }
+  .card:hover .card-cta svg { transform: translateX(4px); }
+
+  /* ALTERNATIVA */
+  #alternativa {
+    display: none; margin-top: 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(232,160,32,0.35);
+    border-radius: 6px; padding: 1.5rem 1.5rem;
+  }
+  #alternativa h3 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dorado); margin-bottom: 0.9rem; }
+  #alternativa ol { color: rgba(255,255,255,0.68); font-size: 0.88rem; line-height: 2.1; padding-left: 1.2rem; }
+  #alternativa a { color: var(--dorado); }
+
+  /* DIVISOR */
+  .div { height: 1px; background: rgba(255,255,255,0.07); width: 100%; max-width: 860px; margin: 0 auto; }
+
+  /* CONTACTO */
+  .contacto { background: rgba(0,0,0,0.2); padding: 2.5rem 2rem; text-align: center; }
+  .contacto-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+  .contacto-lista { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.8rem; }
+  .contacto-item { display: flex; align-items: center; gap: 0.45rem; color: rgba(255,255,255,0.65); font-size: 0.9rem; text-decoration: none; transition: color 0.15s; }
+  .contacto-item:hover { color: var(--dorado); }
+  .contacto-item svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
+
+  footer { text-align: center; padding: 1.2rem; font-size: 0.72rem; color: rgba(255,255,255,0.18); letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="badge">⚽ Cortes, Navarra</div>
+  <h1>48 Horas<span>Fútbol Sala</span></h1>
+  <p class="hero-sub">Asociación Deportiva Cortes &nbsp;·&nbsp; Masculino</p>
+  <div class="fecha-row">
+    <div class="linea"></div>
+    <span>12 · 13 · 14 de Junio 2026</span>
+    <div class="linea"></div>
+  </div>
+  <div class="btns">
+    <a class="btn btn-gold" href="https://docs.google.com/forms/d/1lJv9D7MIK8v8T9guh7HupYmv0FZk56sjOX4stlCenDU/viewform" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Inscribir equipo
+    </a>
+    <a class="btn btn-white" href="https://docs.google.com/forms/d/1FGtZAPnAt7Zx_rpVUkj3-rm-lsGM0y9flAr61HSA1gY/viewform" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+      Modificar plantilla
+    </a>
+    <a class="btn btn-outline" href="https://drive.google.com/drive/folders/1uN6Z30QBo8AEgN0DiSHdHTISk6rQq0oe" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+      Drive del torneo
+    </a>
+  </div>
+</section>
+
+<!-- PREMIOS -->
+<section class="bloque">
+  <div class="bloque-inner">
+    <p class="etiqueta">Competición masculina</p>
+    <h2 class="titulo-seccion">Premios</h2>
+    <div class="premios">
+      <div class="premio oro"><div class="premio-pos">1er Puesto</div><div class="premio-importe">1.300€</div><div class="premio-nota">+ Trofeo</div></div>
+      <div class="premio"><div class="premio-pos">2º Puesto</div><div class="premio-importe">700€</div><div class="premio-nota">+ Trofeo</div></div>
+      <div class="premio"><div class="premio-pos">3er y 4º Puesto</div><div class="premio-importe">200€</div><div class="premio-nota">+ Trofeo</div></div>
+      <div class="premio"><div class="premio-pos">Premios individuales</div><div class="premio-importe" style="font-size:1.4rem;margin-top:4px">🏆</div><div class="premio-nota">Mejor jugador y portero</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- INSCRIPCIÓN -->
+<section class="bloque bloque-alt">
+  <div class="bloque-inner">
+    <p class="etiqueta">Detalles</p>
+    <h2 class="titulo-seccion">Inscripción</h2>
+    <div class="datos">
+      <div><div class="dato-label">Cuota por equipo</div><div class="dato-val">150 €</div><div class="dato-sub">Transferencia bancaria</div></div>
+      <div><div class="dato-label">IBAN</div><div class="dato-val" style="font-size:0.95rem">ES67 3008 0029 2557 6279 0425</div><div class="dato-sub">Concepto: nombre del equipo</div></div>
+      <div><div class="dato-label">Plazo de inscripción</div><div class="dato-val">1 Junio</div><div class="dato-sub">Hasta el 1 de junio de 2026</div></div>
+      <div><div class="dato-label">Regalos</div><div class="dato-val" style="font-size:1rem">🎁 Para jugadores</div><div class="dato-sub">Regalo para todos los participantes</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- ACCIONES -->
+<section class="bloque">
+  <div class="bloque-inner">
+    <p class="etiqueta">Gestión del equipo</p>
+    <h2 class="titulo-seccion">¿Qué quieres hacer?</h2>
+    <div class="cards">
+      <a class="card dest" href="https://docs.google.com/forms/d/1lJv9D7MIK8v8T9guh7HupYmv0FZk56sjOX4stlCenDU/viewform" target="_blank">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <div class="card-titulo">Inscribir equipo</div>
+        <div class="card-desc">Rellena el formulario online con los datos del equipo y jugadores. Mínimo 5, máximo 15.</div>
+        <div class="card-cta">Ir al formulario <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="card" href="https://docs.google.com/forms/d/1FGtZAPnAt7Zx_rpVUkj3-rm-lsGM0y9flAr61HSA1gY/viewform" target="_blank">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></div>
+        <div class="card-titulo">Modificar plantilla</div>
+        <div class="card-desc">¿Necesitas cambiar algún jugador? Puedes hacerlo hasta antes de vuestro primer partido.</div>
+        <div class="card-cta">Solicitar cambio <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <div class="card" onclick="document.getElementById('alternativa').style.display=document.getElementById('alternativa').style.display==='none'?'block':'none'">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></div>
+        <div class="card-titulo">Método alternativo</div>
+        <div class="card-desc">Descarga el Excel, rellénalo y envíalo junto al justificante de pago por correo.</div>
+        <div class="card-cta">Ver instrucciones <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <a class="card" href="https://drive.google.com/drive/folders/1uN6Z30QBo8AEgN0DiSHdHTISk6rQq0oe" target="_blank">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg></div>
+        <div class="card-titulo">Drive del torneo</div>
+        <div class="card-desc">Accede a toda la documentación, Excel de inscripción y archivos del torneo.</div>
+        <div class="card-cta">Abrir Drive <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+    <div id="alternativa">
+      <h3>Inscripción por correo</h3>
+      <ol>
+        <li>Descarga el Excel desde el Drive del torneo</li>
+        <li>Rellena todos los datos del equipo y jugadores</li>
+        <li>Realiza la transferencia de <strong style="color:#fff">150€</strong> al IBAN <strong style="color:#fff">ES67 3008 0029 2557 6279 0425</strong> — concepto: nombre del equipo</li>
+        <li>Envía el Excel + justificante a <a href="mailto:maratonfutbolsalacortes@gmail.com">maratonfutbolsalacortes@gmail.com</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<div class="contacto">
+  <p class="contacto-label">Contacto e información</p>
+  <div class="contacto-lista">
+    <a class="contacto-item" href="tel:620909834"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>620 909 834</a>
+    <a class="contacto-item" href="mailto:cultura@cortes.es"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>cultura@cortes.es</a>
+    <a class="contacto-item" href="https://instagram.com/48horascortesfs" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/></svg>@48horascortesfs</a>
+    <a class="contacto-item" href="mailto:maratonfutbolsalacortes@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>maratonfutbolsalacortes@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 Asociación Deportiva Cortes · 48 Horas Fútbol Sala</footer>
+
+</body>
+</html>
